@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Chapter 1</title>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+</head>
+
+<body>
+    <!-- Add your site or application content here -->
+    <p id="message">Hello world! This is HTML5 Boilerplate.</p>
+
+    <input type="text" id="messageInput" />
+    <button type="button" onclick="addData()">Send message</button>
+
+    <h2>Messages</h2>
+    <p id="list"></p>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDO1VEnd5VmWd2OWQ9NQuh-ehNXcoPTy-w",
+            authDomain: "demoproject-7cc0d.firebaseapp.com",
+            databaseURL: "https://demoproject-7cc0d.firebaseio.com",
+            projectId: "demoproject-7cc0d",
+            storageBucket: "",
+            messagingSenderId: "41428255556"
+        };
+        firebase.initializeApp(config);
+
+        var messageLabel = document.getElementById('message');
+        var messageInput = document.getElementById('messageInput');
+        var messages = document.getElementById('list');
+
+        var db = firebase.database();
+        db.ref().on("value", function(snapshot) {
+            var object = snapshot.val();
+            messageLabel.innerHTML = object.chapter1.example;
+            //console.log(object);
+        });
+
+        // Save data to firebase
+        function addData() {
+            var message = messageInput.value;
+            db.ref().child('messages').push({
+                field: message
+            });
+            messageInput.value = '';
+        }
+
+        // Update results when data is added
+        db.ref().on('child_added', function(snapshot) {
+            var data = snapshot.val();
+            console.log("New Message Added", data);
+            snapshot.forEach(function(childSnap) {
+                console.log(childSnap.val());
+                var message = childSnap.val();
+                messages.innerHTML = '\n' + message.field;
+            });
+        });
+    </script>
+</body>
+
+</html>

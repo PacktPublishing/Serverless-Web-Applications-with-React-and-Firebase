@@ -1,0 +1,75 @@
+.form-signin .btn-facebook {background: #3b5998; border: 1px solid #294c91;}
+.form-signin .btn-google {background: #c32f10; border: 1px solid #b1270c;}
+
+.wrapper {	
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+    max-width: 380px;
+    padding: 15px 35px 45px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px #ccc; 
+}
+.form-signin-heading,.checkbox {
+    margin-bottom: 30px;
+}
+.form-signin-heading{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+.checkbox {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+.form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+}
+
+input[type="email"] {
+    margin-bottom: -1px;
+}
+
+input[type="password"] {
+    margin-bottom: 20px;
+}
+
+.form-signin input[type="email"],.form-signin input[type="password"]{
+    margin-bottom: 10px;
+    border-radius: 0px;
+    font-size: 13px;
+}
+.form-signin button{
+    font-size: 13px;
+    border-radius: 0px;
+    font-weight: normal;
+}
+.form-signin button:hover{
+    opacity:0.9;
+}
+.form-signin button.btn-google:hover{
+    background: #c32f10; 
+    border: 1px solid #b1270c;
+}
+.form-signin button.btn-facebook:hover{
+    background: #3b5998; 
+    border: 1px solid #294c91;
+}
+.form-signin .btn-normal{
+    background: rgb(206, 153, 38);
+    border: 1px solid #998115;
+}
+
+.form-signin .btn-normal:hover{
+    background: #ce9926;
+    border: 1px solid #b6851a;
+}

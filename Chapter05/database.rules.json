@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "helpdesk": {
+      "tickets": {
+        "$ticket_id": {
+          ".read": "auth != null && data.child('email').val() == auth.email",
+          ".write": "auth != null"
+        }
+      }
+    }
+  }
+}
